@@ -15,4 +15,7 @@ object camion {
 	method puedeCircularEnRuta (nivelMaximoPeligrosidad) {
 		return carga.all({objeto => objeto.peligrosidad() <= nivelMaximoPeligrosidad})
 	}
+	method pesoTotal () {
+		return carga.sum {elemento => elemento.peso()} + 1000
+	}
 }
